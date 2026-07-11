@@ -1,0 +1,8 @@
+### Probar la ruta de bienvenida básica
+GET http://localhost:8080/
+
+### Obtener todos los contactos guardados en la nube
+GET http://localhost:8080/contacts
+
+### Obtener un solo contacto por ID (Aquí pegaremos el ID más adelante)
+GET http://localhost:8080/contacts/6a52ce92f952501a885b834a
