@@ -6,3 +6,6 @@ GET http://localhost:8080/contacts
 
 ### Obtener un solo contacto por ID (Aquí pegaremos el ID más adelante)
 GET http://localhost:8080/contacts/6a52ce92f952501a885b834a
+
+### Probar la API en producción (Render)
+GET https://cse341-contacts-ariane.onrender.com/
