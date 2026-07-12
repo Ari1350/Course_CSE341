@@ -9,8 +9,7 @@ const PORT = 8080;
 app.use(cors());
 app.use(express.json());
 
-// REEMPLAZA esta cadena por tu URL clásica "mongodb://" obtenida en los pasos previos
-const MONGO_URI = "mongodb://aaria5:77302832@ac-lq2sb2n-shard-00-00.hjip2vr.mongodb.net:27017,ac-lq2sb2n-shard-00-01.hjip2vr.mongodb.net:27017,ac-lq2sb2n-shard-00-02.hjip2vr.mongodb.net:27017/?ssl=true&replicaSet=atlas-yuijhb-shard-0&authSource=admin&appName=Cluster0";
+
 
 // Variable global para reutilizar la conexión del cliente
 let dbClient;
