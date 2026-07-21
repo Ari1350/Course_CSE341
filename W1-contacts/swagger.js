@@ -5,7 +5,7 @@ const doc = {
     title: 'Contacts API',
     description: 'API de Contactos para la materia CSE 341',
   },
-  host: 'https://cse341-contacts-ariane.onrender.com', 
+  host: 'cse341-contacts-ariane.onrender.com', 
   schemes: ['https', 'http'],
 };
 
