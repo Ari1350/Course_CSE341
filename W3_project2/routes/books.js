@@ -7,6 +7,7 @@ import {
   updateBook,
   deleteBook
 } from '../controllers/books.js';
+import { isAuthenticated } from '../middleware/authenticate.js';
 
 const router = express.Router();
 
@@ -30,11 +31,13 @@ const bookValidationRules = [
   body('language').notEmpty().withMessage('Language is required')
 ];
 
-// Rutas de Libros
+// Rutas GET públicas (Cualquiera puede verlas sin loguearse)
 router.get('/', getAllBooks);
 router.get('/:id', getSingleBook);
-router.post('/', bookValidationRules, validateInput, createBook);
-router.put('/:id', bookValidationRules, validateInput, updateBook);
-router.delete('/:id', deleteBook);
+
+// Rutas de Libros
+router.post('/', isAuthenticated, bookValidationRules, validateInput, createBook);
+router.put('/:id', isAuthenticated, bookValidationRules, validateInput, updateBook);
+router.delete('/:id', isAuthenticated, deleteBook);
 
 export default router;

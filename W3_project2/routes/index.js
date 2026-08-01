@@ -3,6 +3,7 @@ import swaggerUi from 'swagger-ui-express';
 import { createRequire } from 'module';
 import booksRouter from './books.js';
 import authorsRouter from './authors.js';
+import authRouter from './auth.js';
 
 const require = createRequire(import.meta.url);
 let swaggerDocument;
@@ -28,6 +29,7 @@ router.get('/', (req, res) => {
 });
 
 // 3. Rutas de la colección Books (Libros)
+router.use('/auth', authRouter);
 router.use('/books', booksRouter);
 router.use('/authors', authorsRouter);
 

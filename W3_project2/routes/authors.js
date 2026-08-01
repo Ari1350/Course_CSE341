@@ -7,6 +7,7 @@ import {
   updateAuthor,
   deleteAuthor
 } from '../controllers/authors.js';
+import { isAuthenticated } from '../middleware/authenticate.js';
 
 const router = express.Router();
 
@@ -24,10 +25,12 @@ const authorValidationRules = [
   body('birthYear').isNumeric().withMessage('Birth year must be a number')
 ];
 
+// Rutas públicas
 router.get('/', getAllAuthors);
 router.get('/:id', getSingleAuthor);
-router.post('/', authorValidationRules, validateInput, createAuthor);
-router.put('/:id', authorValidationRules, validateInput, updateAuthor);
-router.delete('/:id', deleteAuthor);
+
+router.post('/', isAuthenticated, authorValidationRules, validateInput, createAuthor);
+router.put('/:id', isAuthenticated, authorValidationRules, validateInput, updateAuthor);
+router.delete('/:id', isAuthenticated, deleteAuthor);
 
 export default router;

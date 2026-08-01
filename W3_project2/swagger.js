@@ -2,11 +2,21 @@ import swaggerAutogen from 'swagger-autogen';
 
 const doc = {
   info: {
-    title: 'Books and Authors API',
-    description: 'API for managing books and authors - Project 2 Part 1',
+    title: 'Books and Authors API with OAuth',
+    description: 'API for managing books and authors protected by GitHub OAuth',
   },
-  host: 'localhost:8080',
-  schemes: ['http'],
+  host: 'https://project2-3c1l.onrender.com', 
+  schemes: ['https', 'http'],
+  securityDefinitions: {
+    oauth2: {
+      type: 'oauth2',
+      authorizationUrl: '/auth/login',
+      flow: 'implicit',
+      scopes: {
+        'user:email': 'Access user email profile'
+      }
+    }
+  }
 };
 
 const outputFile = './swagger-output.json';
