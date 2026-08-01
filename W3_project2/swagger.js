@@ -6,7 +6,7 @@ const doc = {
     description: 'API for managing books and authors - Project 2 Part 1',
   },
   host: 'localhost:8080',
-  schemes: ['https', 'http'],
+  schemes: ['https'],
 };
 
 const outputFile = './swagger-output.json';
