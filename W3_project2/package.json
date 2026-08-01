@@ -1,0 +1,22 @@
+{
+  "name": "w3_project2",
+  "version": "1.0.0",
+  "description": "Proyecto 2 - Parte 1",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "swagger": "node swagger.js"
+  },
+  "keywords": [],
+  "author": "Ariane",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+    "mongodb": "^6.7.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
