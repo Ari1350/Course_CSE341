@@ -13,7 +13,7 @@ export const initDB = (callback) => {
   
   MongoClient.connect(process.env.MONGODB_URI)
     .then((client) => {
-      // .db() asegura que guardamos la instancia de la base de datos y no el cliente completo
+      
       _db = client.db(); 
       callback(null, _db);
     })
