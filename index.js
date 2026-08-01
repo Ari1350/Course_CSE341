@@ -9,8 +9,6 @@ const PORT = 8080;
 app.use(cors());
 app.use(express.json());
 
-
-
 // Variable global para reutilizar la conexión del cliente
 let dbClient;
 
