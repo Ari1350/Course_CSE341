@@ -8,7 +8,7 @@ import mainRouter from './routes/index.js';
 
 dotenv.config(); 
 
-const app = express(); 
+const app = express(); // <-- 1. Primero creamos la app de Express
 const PORT = process.env.PORT || 8080; 
 
 // 2. Middlewares obligatorios para procesar JSON y formularios
@@ -64,6 +64,7 @@ app.use((err, req, res, next) => {
   }); 
 }); 
 
+// Inicializar Base de Datos y Servidor
 initDB((err) => { 
   if (err) { 
     console.error('Error connecting to MongoDB:', err); 
