@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
+    "start": "node swagger.js && node index.js",
     "swagger": "node swagger.js"
   },
   "keywords": [],
