@@ -43,7 +43,9 @@ passport.deserializeUser((obj, done) => { done(null, obj); });
 
 // Encabezados CORS básicos para permitir llamadas externas
 app.use((req, res, next) => { 
-  res.setHeader('Access-Control-Allow-Origin', '*'); 
+  res.setHeader('Access-Control-Allow-Origin', 'https://project2-3c1l.onrender.com'); 
+  res.setHeader('Access-Control-Allow-Credentials', 'true'); 
+
   res.setHeader( 
     'Access-Control-Allow-Headers', 
     'Origin, X-Requested-With, Content-Type, Accept, Z-Key' 
