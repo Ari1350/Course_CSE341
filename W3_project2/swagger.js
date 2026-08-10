@@ -5,7 +5,7 @@ const doc = {
     title: 'Books and Authors API with OAuth',
     description: 'API for managing books and authors protected by GitHub OAuth',
   },
-  host: 'https://project2-3c1l.onrender.com', 
+  host: 'project2-3c1l.onrender.com', 
   schemes: ['https', 'http'],
   securityDefinitions: {
     oauth2: {

@@ -8,7 +8,7 @@ import mainRouter from './routes/index.js';
 
 dotenv.config(); 
 
-const app = express(); // <-- 1. Primero creamos la app de Express
+const app = express(); // la app de Express
 const PORT = process.env.PORT || 8080; 
 
 // 2. Middlewares obligatorios para procesar JSON y formularios
