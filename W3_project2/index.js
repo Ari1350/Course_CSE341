@@ -42,17 +42,22 @@ passport.serializeUser((user, done) => { done(null, user); });
 passport.deserializeUser((obj, done) => { done(null, obj); }); 
 
 // Encabezados CORS básicos para permitir llamadas externas
-app.use((req, res, next) => { 
-  res.setHeader('Access-Control-Allow-Origin', 'https://project2-3c1l.onrender.com'); 
-  res.setHeader('Access-Control-Allow-Credentials', 'true'); 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://project2-3c1l.onrender.com');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization, Z-Key' // <-- 'Authorization' AÑADIDO AQUÍ
+  );
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  
+  // Detener inmediatamente peticiones de control pre-vuelo (OPTIONS)
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  next();
+});
 
-  res.setHeader( 
-    'Access-Control-Allow-Headers', 
-    'Origin, X-Requested-With, Content-Type, Accept, Z-Key' 
-  ); 
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); 
-  next(); 
-}); 
 
 // Enrutador Principal
 app.use('/', mainRouter); 
