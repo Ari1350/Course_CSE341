@@ -8,8 +8,7 @@
   "host": "project2-3c1l.onrender.com",
   "basePath": "/",
   "schemes": [
-    "https",
-    "http"
+    "https"
   ],
   "securityDefinitions": {
     "oauth2": {
